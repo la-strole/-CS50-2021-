@@ -1,0 +1,96 @@
+body {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 100vw;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+
+/* background for mibile */
+
+@media (max-width: 640px) {
+    body {
+        background-image: url(images/DARK/abstract-movement-1182639-640x480.jpg);
+    }
+}
+
+
+/* background for tablets and desctops */
+
+@media (min-width: 641px) {
+    body {
+        background-image: url(images/DARK/abstract-movement-1182639.jpg);
+    }
+}
+
+.main {
+    flex: 1;
+    min-width: inherit;
+    /*border: solid blue;*/
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    box-shadow: 5px 5px 2px #212529;
+}
+
+.card-body {
+    /*border: solid red;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.2em;
+}
+
+.card_column {
+    /*border: solid red;*/
+    max-width: 350px;
+    min-width: 200px;
+}
+
+.row {
+    /*border: solid green;*/
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.footer_ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.875em;
+}
+
+.footer_ui_head {
+    font-size: 1.1em;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+.noImage {
+    color: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 4px 0 rgba(9, 130, 154, 0.2);
+    background: linear-gradient(rgba(9, 130, 154, 1), rgba(9, 130, 154, 0.5));
+}

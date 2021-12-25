@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="trivia.css" />
+        <script src="trivia.js"></script> 
+        <title>Trivia!</title> 
+    </head>
+    <body>
+        <header id="quiz_name">
+            <h1>Trivia!</h1>
+        </header>
+        <form id="main">
+            <section id="part1">
+                <h2>Part1: Multiple Choice</h2><br><hr>
+                <h3>What is the approximate ratio of peolple to sheep in New Zeland?</h3>
+                <table>
+                    <tr>
+                        <td><input type="button" onclick="answer_part1(this.className, this.id)" class="incorrect" id="1-1" value="6 people per 1 sheep"></td>
+                        <td><input type="button" onclick="answer_part1(this.className, this.id)" class="incorrect" id="1-2" value="3 people per 1 sheep"></td>
+                        <td><input type="button" onclick="answer_part1(this.className, this.id)" class="incorrect" id="1-3" value="1 person per 1 sheep"></td>
+                        <td><input type="button" onclick="answer_part1(this.className, this.id)" class="incorrect" id="1-4" value="1 person per 3 sheep"></td>
+                        <td><input type="button" onclick="answer_part1(this.className, this.id)" class="correct" id="1-5" value="1 person per 6 sheep"></td>
+                    </tr>
+                </table>
+                <br>
+                <p id="answer_part1"></p>
+            </section>
+            <section id="part2">
+                <h2>Part2: Free Response</h2><br><hr>
+                <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?</h3>
+                <table>
+                    <tr>
+                        <td><input type="text" id="input_text_2"></td>
+                        <td><input type="button" onclick="answer_part2(this.id)" class="button" id="2-1" value="Check Answer"></td>
+                        
+                    </tr>
+                    
+                </table>
+                <p id="answer_part2"></p>
+            </section>
+        </form>
+    </body>
+</html>

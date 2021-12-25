@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: better than sort3 in sorted50000.txt case. (I known that sort 2 - merge sort) 
+
+sort2 uses: merge sort
+
+How do you know?: the best running time for great number random test (50k and 10k) because O(nlog(n))
+
+sort3 uses: selection sort
+
+How do you know?: by elimination 

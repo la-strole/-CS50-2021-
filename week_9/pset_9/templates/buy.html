@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block js_import_block %}
+<script src="static/quote_symbols_ajax.js"></script>
+{% endblock %}
+{% block title %}
+Buy
+{% endblock %}
+{% block main %}
+<form action="/buy" method="post">
+    <div class="form-group">
+        <input type="search" name="symbol" id="symbol-input" list="symbols" autocomplete="off" autofocus maxlength="6" required placeholder="Symbol" >
+            <datalist id="symbols">
+                <!-- AJAX options from DB pu here -->
+            </datalist>
+    </div>
+    <div class="form-group">
+        <input type="number" name="shares" autocomplete="off" min="1" required placeholder="Shares">
+    </div>
+     <button class="btn btn-primary" type="submit">Buy</button>
+</form>
+{% endblock %}

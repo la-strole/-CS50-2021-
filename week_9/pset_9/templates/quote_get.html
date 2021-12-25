@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block js_import_block %}
+<!-- add ajax for symbols of quote request -->
+<script src="static/quote_symbols_ajax.js"></script>
+{% endblock %}
+
+{% block title %}
+Quote
+{% endblock %}
+
+{% block main %}
+<form action="/quote" method="post">
+
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" id="symbol-input" placeholder="Symbol" type="search" maxlength="6" required list="symbols">
+                <datalist id="symbols">
+                    <!-- paste AJAX here -->
+                </datalist>
+        </div>
+        <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
+{% endblock %}

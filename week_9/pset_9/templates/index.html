@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block title %}
+Main
+{% endblock %}
+{% block main %}
+<h2 class="center">{{ username }}'s deposits and cash</h2>
+<div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr class="table-primary">
+          <th scope="col"></th>
+          <th scope="col">Symbol</th>
+          <th scope="col">Name</th>
+          <th scope="col">Shares</th>
+          <th scope="col">Price</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for ticker in tickers %}
+        <tr>
+          <th scope="row"> {{ loop.index }}</th>
+          <td>{{ ticker.symbol }}</td>
+          <td class="text-left">{{ ticker.name }}</td>
+          <td>{{ ticker.share }}</td>
+          <td class="text-right">{{ ticker.current_price | usd }}</td>
+          <td class="text-right">{{ (ticker.current_price * ticker.share) | usd }}</td>
+        </tr>
+        {% endfor %}
+
+        <tr class="table-secondary">
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="font-weight-bold">Cash</td>
+            <td class="font-weight-bold text-right">{{ cash | usd }}</td>
+        </tr>
+        <tr class="table-secondary">
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="font-weight-bold">Total</td>
+            <td class="font-weight-bold text-right">{{ total | usd}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+{% endblock %}

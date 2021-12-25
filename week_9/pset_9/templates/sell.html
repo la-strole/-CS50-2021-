@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Sell
+{% endblock %}
+
+{% block main %}
+<script>
+    const tickers = {
+        {% for ticker in tickers %}
+        '{{ ticker.symbol }}':'{{ ticker.share }}',
+        {% endfor %}
+    };
+    function change_max_number(name){
+      var atr = document.createAttribute("max");
+      if (tickers[name] != undefined){
+        atr.value = tickers[name];
+        document.getElementById("number_share").setAttributeNode(atr);
+        document.getElementById("label_for_number").innerHTML = "Quantity (between 1 and " + tickers[name] + ')';
+      }
+      else {
+          console.log(`can not add max attribute to input number (name=${name})`)
+      }
+      
+    }
+</script>
+<form action="/sell" method="post">
+    <div class="form-group">
+        <select name="symbol"  autocomplete="off" autofocus required  onchange="change_max_number(this.value)">
+            <option disabled selected>Choose your stock</option>
+            {% for ticker in tickers %}
+            <option value="{{ ticker.symbol }}">{{ ticker.symbol }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="number_share" id="label_for_number" style="display: block;">Quantity (more than 1):</label>
+        <input type="number" id="number_share" name="shares" autocomplete="off" min="1" required placeholder="Shares">
+    </div>
+     <button class="btn btn-primary" type="submit">Sell</button>
+</form>
+{% endblock %}
